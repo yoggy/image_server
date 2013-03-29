@@ -35,3 +35,11 @@ URLs
   /image_jpeg?_id=object_id
       
 </pre>
+
+how to upload image.
+============
+curlを使って画像ファイルをアップロードする例。
+<pre>
+  $ curl -F name=camera1 -F image=@image.jpg http://localhost:20080/image_post
+</pre>
+
