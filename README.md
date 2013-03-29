@@ -28,7 +28,7 @@ URLs
       
   /image_list
       
-  /image_view
+  /image_view.html
       
   /image_jpeg?name=target_name
       
