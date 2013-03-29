@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>history</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+	<h2>
+		list 
+		<% if (name != "") {%>(name=<%=name%>)<% } %>
+	</h2>
+	<div class="page_navigate">
+		<% if (prev_pos != -1) {%>
+			<a href="?pos=<%=prev_pos%>">prev_page</a>
+		<% } %>
+		<% if (next_pos != item_count) {%>
+			<a href="?pos=<%=next_pos%>">next_page</a>
+		<% } %>
+	</div>
+	
+	<div class_name="image_list">
+		<% images.forEach(function(i) { %>
+			<div id="image_item_<%=i._id%>" class="image_item">
+				<a href="image_jpeg?_id=<%=i._id%>">
+					<img class="image_icon" src="image_jpeg?_id=<%=i._id%>&width=48">
+				</a>
+				<span class="image_item">_id：      <%=i._id%>      </span>
+				<span class="image_item">name：     <%=i.name%>     </span>
+				<span class="image_item">timestamp：<%=i.timestamp%></span>
+			</div>
+		<% }); %>
+	</div>
+
+	<div class="page_navigate">
+		<% if (prev_pos != -1) {%>
+			<a href="?pos=<%=prev_pos%>">prev_page</a>
+		<% } %>
+		<% if (next_pos != item_count) {%>
+			<a href="?pos=<%=next_pos%>">next_page</a>
+		<% } %>
+	</div>
+
+</body>
+</html>

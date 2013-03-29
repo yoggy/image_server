@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>image view</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<script type="text/javascript" src="/javascripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/javascripts/image_view.js"></script>
+</head>
+<body>
+	<h2>view</h2>
+	<div id="select_target">
+		name:
+		<select id="target_name">
+			<option value="camera0" selected>camera0</option>
+			<option value="camera1">camera1</option>
+			<option value="camera2">camera2</option>
+			<option value="camera3">camera3</option>
+			<option value="camera4">camera4</option>
+			<option value="camera5">camera5</option>
+		</select>
+
+		size
+		<select id="image_size">
+			<option value="640">w=640</option>
+			<option value="320" selected>w=320</option>
+			<option value="160">w=160</option>
+			<option value="80">w=80</option>
+		</select>
+
+		update interval
+		<select id="update_interval">
+			<option value="100">0.1s</option>
+			<option value="200">0.2s</option>
+			<option value="500">0.5s</option>
+			<option value="1000" selected>1s</option>
+			<option value="2000">2s</option>
+			<option value="5000">5s</option>
+			<option value="10000">10s</option>
+			<option value="10000">30s</option>
+		</select>
+	</div>
+	<div id="image_container">
+		<img id="image_area">
+	</div>
+</body>	
+</html>
