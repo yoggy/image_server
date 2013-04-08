@@ -28,7 +28,7 @@ exports.post = function(req, res) {
 		var query = {};
 		query['name']  = name;
 		query['image'] = buf;
-		query['timestamp'] = (new Date()).getTime() % 1000000000;
+		query['timestamp'] = new Date().getTime(); //milliseconds
 
 		Image.insert(query);
 
