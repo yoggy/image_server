@@ -128,3 +128,14 @@ exports.jpeg = function(req, res) {
 		render_error(res, 'exception occured...ex=' + ex);
 	}
 }
+
+exports.delete_all = function(req, res) {
+	try {
+		Image.remove({});
+		res.redirect('index.html');
+	}
+	catch (ex) {
+		render_error(res, 'exception occured...ex=' + ex);
+	}
+}
+

@@ -31,9 +31,10 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/image_list', image.list);
+app.get('/image_list',  image.list);
 app.post('/image_post', image.post);
-app.get('/image_jpeg', image.jpeg);
+app.get('/image_jpeg',  image.jpeg);
+app.post('/delete_all',  image.delete_all);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
