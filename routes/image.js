@@ -77,7 +77,7 @@ exports.list = function(req, res) {
 
 function render_jpeg(req, res, query) {
 	try {
-		Image.find(query).limit(1).sort({timestamp:-1}).toArray(function(err, array) {
+		Image.find(query).limit(1).sort({$natural:-1}).toArray(function(err, array) {
 			if (err || !array || array.length == 0) {
 				console.log("err : image not found...");
 				res.render('error', { error_result: 'image not found...'});
