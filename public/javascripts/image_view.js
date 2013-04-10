@@ -7,8 +7,11 @@ function reload_image() {
 	var image_src = "image_jpeg?name=" + target_name + "&width=" + image_size + "&" + timestamp;
 
 	$('#image_area').attr('src', image_src);
+}
 
-	setTimeout(reload_image, update_interval);
+function periodic_reload_image() {
+	reload_image();
+	setTimeout(periodic_reload_image, update_interval);
 }
 
 function init() {
@@ -32,6 +35,6 @@ function init() {
 
 $(document).ready(function() {
 	init();
-	reload_image();
+	periodic_reload_image();
 });
 
