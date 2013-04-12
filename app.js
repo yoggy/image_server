@@ -11,6 +11,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
+http.globalAgent.maxSockets = 200;
+
 var app = express();
 
 app.configure(function(){
