@@ -2,6 +2,23 @@ var target_name;
 var image_size;
 var update_interval;
 
+// http://jquery-howto.blogspot.jp/2009/09/get-url-parameters-values-with-jquery.html
+$.extend({
+	getUrlVars: function(){
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++) {
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		return vars;
+	},
+	getUrlVar: function(name){
+		return $.getUrlVars()[name];
+	}
+});
+
 function reload_image() {
 	var timestamp = new Date().getTime();
 	var image_src = "image_jpeg?name=" + target_name + "&width=" + image_size + "&" + timestamp;
@@ -35,6 +52,12 @@ function init() {
 
 $(document).ready(function() {
 	init();
+	var name = $.getUrlVar('name');
+	alert(name);
+	if (name) {
+		$("#target_name").val(name);
+		target_name = name;
+	}
 	periodic_reload_image();
 });
 
