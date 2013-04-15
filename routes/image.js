@@ -58,7 +58,7 @@ exports.list = function(req, res) {
 			var pos = ("pos" in req.query) && req.query.pos > 0 ? parseInt(req.query.pos) : 0;
 			var limit = 50;
 
-			Image.find(query).skip(pos).limit(limit).sort({timestamp:-1}).toArray(function(err, array) {
+			Image.find(query).skip(pos).limit(limit).sort({$natural:-1}).toArray(function(err, array) {
 				if (err || !array || array.length == 0) {
 					res.render('image_list', {images: [], name: name, next_pos:0, prev_pos:-1, item_count:0});
 					return;
