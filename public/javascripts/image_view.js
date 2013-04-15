@@ -53,7 +53,6 @@ function init() {
 $(document).ready(function() {
 	init();
 	var name = $.getUrlVar('name');
-	alert(name);
 	if (name) {
 		$("#target_name").val(name);
 		target_name = name;
