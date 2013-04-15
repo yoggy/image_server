@@ -50,13 +50,23 @@ function init() {
 	});
 }
 
-$(document).ready(function() {
-	init();
+function check_query_string() {
 	var name = $.getUrlVar('name');
 	if (name) {
 		$("#target_name").val(name);
 		target_name = name;
 	}
+
+	var w = $.getUrlVar('w');
+	if (w) {
+		$("#image_size").val(w);
+		image_size = w; 
+	}
+}
+
+$(document).ready(function() {
+	init();
+	check_query_string();
 	periodic_reload_image();
 });
 
