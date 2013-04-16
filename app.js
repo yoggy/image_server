@@ -35,6 +35,7 @@ app.configure('development', function(){
 });
 
 app.get('/image_list',  image.list);
+app.get('/image_query', image.query);
 app.post('/image_post', image.post);
 app.get('/image_jpeg',  image.jpeg);
 app.post('/delete_all',  image.delete_all);

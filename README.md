@@ -20,20 +20,30 @@ for Ubuntu 12.04
 URLs
 ============
 <pre>
-  /
+  * 画像の送信
+    /image_post.html
+    /image_post
       
-  /image_post.html
+  * 画像履歴一覧の表示(HTML)
+    /image_list
+    /image_list?name=target_name
       
-  /image_post
-      
-  /image_list
-      
-  /image_view.html
-      
-  /image_jpeg?name=target_name
-      
-  /image_jpeg?_id=object_id
-      
+  *  画像の表示(ライブビュー)
+    /image_view.html
+    /image_view.html?name=target_name
+
+  * 画像情報のクエリー(JSON)
+    /image_query
+    /image_query?name=target_name
+    /image_query?name=target_name&limit=100
+    /image_query?name=target_name&skip=100
+
+  * 画像の表示(JPEG画像、最新の画像を表示)
+    /image_jpeg?name=target_name
+
+  * 画像の表示(JPEG, _id直接指定)
+    /image_jpeg?_id=object_id
+
 </pre>
 
 how to upload image.

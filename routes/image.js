@@ -75,6 +75,41 @@ exports.list = function(req, res) {
 	}
 }
 
+exports.query = function(req, res) {
+	try {
+		var query = {};
+		var return_keys = {_id:1, name:1, timestamp:1};
+		var name = "";
+		var limit = 100;
+		var skip = 0;
+
+		if ("name" in req.query) {
+			name = req.query.name;
+			query = {name : req.query.name};
+		}
+		if ("limit" in req.query) {
+			limit = parseInt(req.query.limit);
+		}
+		if ("skip" in req.query) {
+			skip = parseInt(req.query.skip);
+		}
+
+		Image.find(query, return_keys).skip(skip).limit(limit).sort({$natural:-1}).toArray(function(err, array) {
+			if (err || !array || array.length == 0) {
+				res.send({result:[], count:0, err:true, msg:"Image.find() failed...err"+err});
+				return;
+			}
+			array.forEach(function(v) {
+				v["_id"] = v["_id"].toString();
+			});
+			res.send({result:array, count:array.length, err:false, msg:"query success."});
+		});
+	}
+	catch (ex) {
+		render_error(res, 'exception occured...ex=' + ex);
+	}
+}
+
 function render_jpeg(req, res, query) {
 	try {
 		Image.find(query).limit(1).sort({$natural:-1}).toArray(function(err, array) {
