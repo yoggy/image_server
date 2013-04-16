@@ -28,7 +28,7 @@ URLs
     /image_list
     /image_list?name=target_name
       
-  *  画像の表示(ライブビュー)
+  *  画像の表示(HTML, ライブビュー)
     /image_view.html
     /image_view.html?name=target_name
 
@@ -38,7 +38,7 @@ URLs
     /image_query?name=target_name&limit=100
     /image_query?name=target_name&skip=100
 
-  * 画像の表示(JPEG画像、最新の画像を表示)
+  * 画像の表示(JPEG、最新の画像を表示)
     /image_jpeg?name=target_name
 
   * 画像の表示(JPEG, _id直接指定)
