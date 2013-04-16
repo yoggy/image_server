@@ -96,13 +96,13 @@ exports.query = function(req, res) {
 
 		Image.find(query, return_keys).skip(skip).limit(limit).sort({$natural:-1}).toArray(function(err, array) {
 			if (err || !array || array.length == 0) {
-				res.send({result:[], count:0, err:true, msg:"Image.find() failed...err"+err});
+				res.send({result:[], count:0, ok:0, msg:"Image.find() failed...err"+err});
 				return;
 			}
 			array.forEach(function(v) {
 				v["_id"] = v["_id"].toString();
 			});
-			res.send({result:array, count:array.length, err:false, msg:"query success."});
+			res.send({result:array, count:array.length, ok:1, msg:"query success."});
 		});
 	}
 	catch (ex) {
