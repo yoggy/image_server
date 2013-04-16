@@ -40,6 +40,7 @@ URLs
 
   * 画像の表示(JPEG、最新の画像を表示)
     /image_jpeg?name=target_name
+    /image_jpeg?name=target_name&width=160  (resize)
 
   * 画像の表示(JPEG, _id直接指定)
     /image_jpeg?_id=object_id
