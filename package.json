@@ -11,6 +11,8 @@
     "mongolian": "*",
 	"opencv": "*",
 	"forever": "*",
+	"forever-monitor": "*",
+	"daemon": "*",
 	"optimist": "*"
   }
 }
