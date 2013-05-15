@@ -1,6 +1,6 @@
 // config
 var target_script = 'app.js';
-var restart_interval = 3 * 60 * 60 * 1000; // ms
+var restart_interval = 2 * 60 * 60 * 1000; // ms
 
 // 
 var path = require('path'),
