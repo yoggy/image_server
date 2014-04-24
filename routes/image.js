@@ -129,11 +129,15 @@ function render_jpeg(req, res, query) {
 					im.resize(w, h);
 
 					res.setHeader('Content-Type', 'image/jpeg');
+					res.setHeader('X-Content-Type-Options', 'nosniff');
+					res.setHeader('Access-Control-Allow-Origin', '*');
 					res.end(im.toBuffer());
 				});
 			}
 			else {
 				res.setHeader('Content-Type', 'image/jpeg');
+				res.setHeader('X-Content-Type-Options', 'nosniff');
+				res.setHeader('Access-Control-Allow-Origin', '*');
 				res.end(image);
 			}
 		});
