@@ -18,7 +18,7 @@ exports.post = function(req, res) {
 		fd = fs.openSync(tmp_path, 'r');
 		stats = fs.fstatSync(fd);
 		var size = stats.size;
-		console.log("tmp_path=" + tmp_path + ",size=" + size);
+		console.log("name=" + name + ", tmp_path=" + tmp_path + ",size=" + size);
 
 		var buf = new Buffer(size);
 		fs.readSync(fd, buf, 0, buf.length);
